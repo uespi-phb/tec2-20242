@@ -2,7 +2,7 @@
 import { validateCpf } from "../src/validate-cpf"
 
 describe('validateCpf', () => {
-  test.each([
+test.each([
       '177.594.490-54',
       '515.070.430-07',
       '784.373.310-80'

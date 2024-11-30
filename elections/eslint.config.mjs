@@ -2,7 +2,7 @@ import globals from "globals"
 import pluginJs from "@eslint/js"
 import tseslint from "typescript-eslint"
 
-export default [
+const c = [
   {
     ignores: [
       "node_modules/*",
@@ -26,3 +26,5 @@ export default [
     }
   }
 ]
+
+console.log(c)

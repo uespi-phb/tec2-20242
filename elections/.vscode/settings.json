@@ -2,16 +2,16 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "editor.formatOnSave": false,
-  "[typescript]": {
-    "editor.formatOnSave": false
-  },
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "boundary",
   "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
   "explorer.autoReveal": false,
   "terminal.integrated.fontSize": 14,
   "workbench.colorTheme": "Dracula Theme",
@@ -21,10 +21,7 @@
   "window.zoomLevel": 1,
   "explorer.compactFolders": false,
   "workbench.editor.enablePreview": false,
-  "liveServer.settings.donotShowInfoMsg": true,
-  "liveServer.settings.host": "localhost",
   "git.openRepositoryInParentFolders": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "editor.indentSize": "tabSize",
-  "CodeGPT.apiKey": "CodeGPT Plus Beta",
+  "editor.indentSize": "tabSize"
 }

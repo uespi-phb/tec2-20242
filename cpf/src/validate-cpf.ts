@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
-export function validateCpf (cpf: any) {
+export function validateCpf (cpf: string) {
   const cpfNumberOfDigits = 11
 
 	if ((cpf === null) || (cpf === undefined)) return false
@@ -21,7 +20,11 @@ function removeNonDigits(cpf: string): string {
 
 function allDigitsTheSame(cpf: string): boolean {
   const firstDigit = cpf[0]
-  return cpf.split("").every(digit => digit === firstDigit)
+  // return cpf.split("").every(digit => digit === firstDigit)
+  for (const digit of cpf) {
+    if(digit != firstDigit) return false
+  }
+  return true
 }
 
 function calculateCheckDigit(cpf: string, length: number): number {
@@ -34,6 +37,6 @@ function calculateCheckDigit(cpf: string, length: number): number {
   return (remainder >= 2) ? 11 - remainder : 0
 }
 
-function extractCpfDigits(cpf) {
+function extractCpfDigits(cpf: string): string {
   return cpf.slice(-2)
 }
