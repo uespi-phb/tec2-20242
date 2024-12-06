@@ -5,6 +5,6 @@ export interface Authentication {
 }
 
 export type AuthenticationInput = {
-  email: string,
-  password: string,
+  email: string
+  password: string
 }
