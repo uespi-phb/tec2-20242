@@ -1,5 +1,5 @@
-import { UserAccount } from '../../domain/user-account'
+import { User } from '../../domain/user'
 
 export interface LoadUserRepository {
-  userByEmail(email: string): Promise<UserAccount>
+  userByEmail(email: string): Promise<User>
 }
