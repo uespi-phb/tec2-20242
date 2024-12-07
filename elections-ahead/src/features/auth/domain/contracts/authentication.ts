@@ -1,7 +1,7 @@
-import { UserAccount } from './user-account'
+import { User } from '@/features/auth/domain/entities'
 
 export interface Authentication {
-  execute(input: AuthenticationInput): Promise<UserAccount>
+  execute(input: AuthenticationInput): Promise<User>
 }
 
 export type AuthenticationInput = {

@@ -1,14 +1,12 @@
 export interface UserAuth {
-  execute(input: UserAuth.Input): Promise<UserAuth.Output>
+  signIn(input: UserAuth.Input): Promise<UserAuth.Output>
 }
 
 export namespace UserAuth {
   export type Input = {
-    email: string
+    username: string
     password: string
   }
 
-  export type Output = {
-    accessToken: string
-  }
+  export type Output = boolean
 }

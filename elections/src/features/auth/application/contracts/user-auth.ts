@@ -1,5 +1,5 @@
 export interface UserAuth {
-  signIn(input: UserAuth.Input): UserAuth.Output
+  signIn(input: UserAuth.Input): Promise<UserAuth.Output>
 }
 
 export namespace UserAuth {
