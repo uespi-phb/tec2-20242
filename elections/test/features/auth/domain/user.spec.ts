@@ -1,4 +1,4 @@
-import { User } from '@/features/auth/domain/user'
+import { User } from '@/features/auth/domain/entities'
 
 describe(User.name, () => {
   it('Should create an valid user account', () => {

@@ -1,7 +1,7 @@
-import { User } from '@/features/auth/domain/entities'
+import { AccessToken, User } from '@/features/auth/domain/entities'
 
 export interface Authentication {
-  execute(input: AuthenticationInput): Promise<User>
+  execute(input: AuthenticationInput): Promise<AccessToken>
 }
 
 export type AuthenticationInput = {

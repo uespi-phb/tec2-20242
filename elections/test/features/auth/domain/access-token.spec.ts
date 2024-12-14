@@ -1,4 +1,4 @@
-import { AccessToken } from '@/features/auth/domain/access-token'
+import { AccessToken } from '@/features/auth/domain/entities'
 
 describe('AccessToken', () => {
   it('should create an AccessToken', () => {
