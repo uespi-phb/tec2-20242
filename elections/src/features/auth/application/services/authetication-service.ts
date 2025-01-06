@@ -22,13 +22,12 @@ export class AuthenticationService implements Authentication {
       })
       if (!authData) throw new AuthenticationError()
       const user = await this.userRepo.userByEmail(input.email)
-      if (user) {
+      if (!user) {
         this.userRepo.save(authData)
       }
-      // TODO: write test for tokenEncrypter when user is undefined
       const token = this.tokenEncrypter.encrypt({
-        id: user?.id,
-        email: user?.email,
+        id: user?.id ?? parseInt(authData.id),
+        email: user?.email ?? authData.email,
       })
       return new AccessToken(token)
     } catch {

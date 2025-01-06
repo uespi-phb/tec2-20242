@@ -1,7 +1,7 @@
 import { AccessToken } from '@/features/auth/domain/entities'
 
 describe('AccessToken', () => {
-  it('should create a valid AccessToken entity', () => {
+  it('should create an AccessToken', () => {
     const token = 'any_access_token'
 
     const accessToken = new AccessToken(token)

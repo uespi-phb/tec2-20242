@@ -1,5 +1,5 @@
 export interface UserAuth {
-  signIn(input: UserAuth.Input): Promise<UserAuth.Output>
+  signIn(input: UserAuth.Input): Promise<UserAuth.ProviderData | undefined>
 }
 
 export namespace UserAuth {
@@ -8,5 +8,19 @@ export namespace UserAuth {
     password: string
   }
 
-  export type Output = boolean
+  export enum Provider {
+    facebook,
+    google,
+    instragram,
+    linkedin,
+    tweeter,
+  }
+
+  export type ProviderData = {
+    provider: Provider
+    id: string
+    email: string
+    name: string
+    picture?: string
+  }
 }

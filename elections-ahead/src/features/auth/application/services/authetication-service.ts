@@ -1,29 +1,33 @@
 import { AccessToken, User } from '@/features/auth/domain/entities'
 import { AuthenticationError } from '@/features/auth/application/errors'
 import { UserAuth } from '@/features/auth/application/contracts'
+import { Authentication } from '@/features/auth/domain/contracts'
 import {
-  LoadUserRepository,
+  UserRepository,
   TokenEncrypter,
 } from '@/features/auth/application/contracts'
 
-export class AuthenticationService {
+export class AuthenticationService implements Authentication {
   constructor(
     private readonly userAuth: UserAuth,
-    private readonly loadUserRepo: LoadUserRepository,
+    private readonly userRepo: UserRepository,
     private readonly tokenEncrypter: TokenEncrypter,
   ) {}
 
   async execute(input: AuthenticationService.Input): Promise<AccessToken> {
     try {
-      const authResult = await this.userAuth.signIn({
+      const authData = await this.userAuth.signIn({
         username: input.email,
         password: input.password,
       })
-      if (!authResult) throw new AuthenticationError()
-      const user = await this.loadUserRepo.userByEmail(input.email)
+      if (!authData) throw new AuthenticationError()
+      const user = await this.userRepo.userByEmail(input.email)
+      if (!user) {
+        this.userRepo.save(authData)
+      }
       const token = this.tokenEncrypter.encrypt({
-        id: user.id,
-        email: user.email,
+        id: user?.id ?? authData.id,
+        email: user?.email ?? authData.email,
       })
       return new AccessToken(token)
     } catch {
@@ -37,4 +41,6 @@ export namespace AuthenticationService {
     email: string
     password: string
   }
+
+  export type Output = User
 }

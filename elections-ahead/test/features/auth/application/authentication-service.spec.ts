@@ -90,7 +90,7 @@ describe(AuthenticationService.name, () => {
     expect(userRepo.userByEmail).toHaveBeenCalledTimes(1)
   })
 
-  it('should call UserRepository.save() if userRepository.userByEmail() returns undefined', async () => {
+  it('should call UserRepository.save() if UserRepository.userByEmail() returns undefined', async () => {
     userRepo.userByEmail.mockResolvedValueOnce(undefined)
 
     await sut.execute({ email: userEmail, password: userPassword })
@@ -108,24 +108,24 @@ describe(AuthenticationService.name, () => {
     expect(token).toEqual(fakeToken)
   })
 
-  it('should call TokenEncrypter.encrypt() with correct input when userByEmail returns data', async () => {
-    await sut.execute({ email: userEmail, password: userPassword })
-
-    expect(tokenEncrypter.encrypt).toHaveBeenCalledWith({
-      id: userId,
-      email: userEmail,
-    })
-    expect(tokenEncrypter.encrypt).toHaveBeenCalledTimes(1)
-  })
-
-  it('should call TokenEncrypter.encrypt() with correct input when userByEmail returns undefined', async () => {
-    userRepo.userByEmail.mockResolvedValueOnce(undefined)
-
+  it('should call TokenEncrypter.encrypt() with correct input if UserRepository.userByEmail returns data', async () => {
     await sut.execute({ email: userEmail, password: userPassword })
 
     expect(tokenEncrypter.encrypt).toHaveBeenCalledWith({
       id: fakeUser.id,
       email: fakeUser.email,
+    })
+    expect(tokenEncrypter.encrypt).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call TokenEncrypter.encrypt() with correct input if UserRepository.userByEmail returns undefined', async () => {
+    userRepo.userByEmail.mockResolvedValueOnce(undefined)
+
+    await sut.execute({ email: userEmail, password: userPassword })
+
+    expect(tokenEncrypter.encrypt).toHaveBeenCalledWith({
+      id: providerData.id,
+      email: providerData.email,
     })
     expect(tokenEncrypter.encrypt).toHaveBeenCalledTimes(1)
   })

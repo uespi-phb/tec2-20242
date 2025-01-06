@@ -1,7 +1,7 @@
 import { User } from '@/features/auth/domain/entities'
 
 describe(User.name, () => {
-  it('Should create a valid User entity', () => {
+  it('Should create an valid user account', () => {
     const id = 12345
     const name = 'John Doe'
     const email = 'john.doe@email.com'

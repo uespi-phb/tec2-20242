@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.1" pages="2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="26.0.3" pages="2">
   <diagram name="authentication-clean" id="iyGZp5jmrZklqUcgRUE-">
-    <mxGraphModel dx="1147" dy="629" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" background="none" math="0" shadow="1">
+    <mxGraphModel dx="926" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" background="none" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -116,7 +116,7 @@
         <mxCell id="LERfh-It_sYKTg9gHOGU-11" value="TokenEncrypter" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;flipH=1;" parent="1" vertex="1">
           <mxGeometry x="458" y="570" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="LERfh-It_sYKTg9gHOGU-12" value="SaveUserToken" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;flipH=1;" parent="1" vertex="1">
+        <mxCell id="LERfh-It_sYKTg9gHOGU-12" value="SaveUserAccount" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;flipH=1;" parent="1" vertex="1">
           <mxGeometry x="612" y="570" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="LERfh-It_sYKTg9gHOGU-13" value="LoadUserAccount" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;flipH=1;" parent="1" vertex="1">
@@ -205,7 +205,7 @@
         <mxCell id="u-mnAU9tdNBNZDLYJsx6-2" value="GoogleAuth" style="rounded=0;whiteSpace=wrap;html=1;glass=0;shadow=0;points=[[0,0,0,0,0],[0,0.25,0,0,0],[0,0.5,0,0,0],[0,0.75,0,0,0],[0,1,0,0,0],[0.13,0,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.38,0,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.62,0,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[0.88,0,0,0,0],[1,0,0,0,0],[1,0.25,0,0,0],[1,0.5,0,0,0],[1,0.75,0,0,0],[1,1,0,0,0]];" parent="1" vertex="1">
           <mxGeometry x="305" y="420" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="u-mnAU9tdNBNZDLYJsx6-3" value="JwtAdapter" style="rounded=0;whiteSpace=wrap;html=1;glass=0;shadow=0;points=[[0,0,0,0,0],[0,0.25,0,0,0],[0,0.5,0,0,0],[0,0.75,0,0,0],[0,1,0,0,0],[0.13,0,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.38,0,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.62,0,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[0.88,0,0,0,0],[1,0,0,0,0],[1,0.25,0,0,0],[1,0.5,0,0,0],[1,0.75,0,0,0],[1,1,0,0,0]];" parent="1" vertex="1">
+        <mxCell id="u-mnAU9tdNBNZDLYJsx6-3" value="JwtHandler" style="rounded=0;whiteSpace=wrap;html=1;glass=0;shadow=0;points=[[0,0,0,0,0],[0,0.25,0,0,0],[0,0.5,0,0,0],[0,0.75,0,0,0],[0,1,0,0,0],[0.13,0,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.38,0,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.62,0,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[0.88,0,0,0,0],[1,0,0,0,0],[1,0.25,0,0,0],[1,0.5,0,0,0],[1,0.75,0,0,0],[1,1,0,0,0]];" parent="1" vertex="1">
           <mxGeometry x="458" y="420" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="u-mnAU9tdNBNZDLYJsx6-5" value="UserAccountRepository" style="rounded=0;whiteSpace=wrap;html=1;glass=0;shadow=0;points=[[0,0,0,0,0],[0,0.25,0,0,0],[0,0.5,0,0,0],[0,0.75,0,0,0],[0,1,0,0,0],[0.13,0,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.38,0,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.62,0,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[0.88,0,0,0,0],[1,0,0,0,0],[1,0.25,0,0,0],[1,0.5,0,0,0],[1,0.75,0,0,0],[1,1,0,0,0]];" parent="1" vertex="1">
