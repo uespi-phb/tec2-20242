@@ -6,15 +6,14 @@ export class JwtHandler implements TokenEncrypter, TokenDecrypter {
 
   constructor(
     private readonly secret: string,
-    private readonly expiresInSecs: number,
+    private readonly expirationInSecs: number,
   ) {}
-
-  decrypt(token: string): any {
-    const { iat, exp, ...payload } = jwt.verify(token, this.secret) as jwt.JwtPayload
-    return payload
+  
+  decrypt(token: string) {
+    throw new Error("Method not implemented.");
   }
 
   encrypt(payload: any): string {
-    return jwt.sign(payload, this.secret, { expiresIn: this.expiresInSecs })
+    return jwt.sign(payload, this.secret, { expiresIn: this.expirationInSecs })
   }
 }
